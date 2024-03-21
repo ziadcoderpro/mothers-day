@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mothers Day Surprise</title>
+<link rel="icon" href="https://th.bing.com/th/id/OIP.wbbxKx3YkebsvXxkW3s4-gHaHa?rs=1&pid=ImgDetMain" type="image/x-icon"> <!-- Set the favicon -->
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://us.firenews.video/wp-content/uploads/2024/03/These-flowers-bloom-exclusively-at-night-and-need-moonlight-to.jpeg'); /* Replace this with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Set text color to white for better visibility on the background image */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add shadow to text for better readability */
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 24px; /* Increase the font size of the container */
+  }
+
+  button {
+    padding: 20px 40px; /* Increase button padding */
+    font-size: 24px; /* Increase button font size */
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: red;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  #yesButton {
+    transition: all 0.3s;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #noButton {
+    transition: all 0.3s;
+    background-color: #f44336;
+    color: white;
+  }
+
+  #imageContainer {
+    margin-top: 40px; /* Increase margin top for image container */
+  }
+
+  #fadeImage {
+    display: none;
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 80%; /* Limit the maximum width of the image */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 style="font-size: 36px;">Happy Mother's Day!</h1>
+  <p style="font-size: 28px;">Are you a proud mom?</p>
+  <button id="yesButton" onclick="handleYesClick()">Yes</button>
+  <button id="noButton" onclick="enlargeYesButton()">No</button>
+  <div id="imageContainer">
+    <img id="fadeImage" src="mom.jpeg" alt="Proud Mom Image">
+  </div>
+</div>
+<script>
+  let count = 0;
+
+  function increaseSize() {
+    count++;
+    if (count === 30) {
+      alert("Congratulations! You are a super proud mom!");
+      count = 0;
+    }
+    document.getElementById("yesButton").style.fontSize = (24 + count) + "px"; // Adjust button font size
+  }
+
+  function enlargeYesButton() {
+    let currentSize = parseInt(window.getComputedStyle(document.getElementById("yesButton")).fontSize);
+    document.getElementById("yesButton").style.fontSize = (currentSize + 5) + "px";
+  }
+
+  function handleYesClick() {
+    increaseSize();
+    document.getElementById("fadeImage").style.display = "block";
+    setTimeout(function() {
+      alert("I love you so much!");
+    }, 1000); // Set the delay in milliseconds (here, 1000 milliseconds = 1 second)
+  }
+</script>
+</body>
+</html>
